@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<body>
+		<h2>Welcome!</h2>
+		<a href="#" id="link_modal" data-modal="#modal_welcome">Open modal welcome</a>
+
+		<div class="overall_modal"></div>
+		<div class="modal" id="modal_welcome">
+			<header>
+				<h1>Modal welcome</h1>
+				<button type="button" id="bt_close" class="bt_close">
+			</header>
+			<div class="content"></div>
+		</div>
+		<script>
+		  document.on('DOMContentLoaded', function() {
+				var M = window.EasyFood = window.EasyFood || {};
+				var modal = new M.Modal();
+				modal.start();
+
+				window.setTimeout(function() {
+					document.find('#modal_welcome .content').innerText = 'Content after update';
+				}, 100);
+			});
+		</script>
+	</body>
+</html>
